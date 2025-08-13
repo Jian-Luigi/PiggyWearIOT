@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pigs</title> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+</head>
+
+<style>
+  .flex-wrap-equal > [class*='col-']{
+    display: flex;
+    flex-direction: column;
+  }
+  .flex-wrap-equal > [class*='col-'] > * {
+    flex-grow: 1;
+  }
+  .offcanvas{
+    width: 15% !important;
+  }
+  @media screen and (max-width: 576px) {
+    .offcanvas{
+    width: 55% !important;
+  }
+  .left1{ 
+    text-align: center !important;
+  }
+  }
+  @media screen and (min-width: 576px) and (max-width: 768px) {
+    .offcanvas{
+    width: 45% !important;
+  }
+  .left1{
+    text-align: center !important;
+  }
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px){
+    .offcanvas{
+    width: 35% !important;
+  }
+  }
+  @media screen and (min-width: 768px){
+    .left1{
+    text-align: left !important;
+  }
+  }
+  .card-text-left {
+    text-align: left;
+  }
+  </style>
+<body   class ="container-fluid" style=" background-color: #dfffd7;">
+  <nav class="navbar">
+    <div class=" container-fluid">
+      <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><i class="bi bi-list"></i>
+        </button>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header text-center">
+            <h5 class="offcanvas-title w-100" id="offcanvasExampleLabel"><em>PiggyWearIoT.</em></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body d-flex justify-content-center">
+            <ul class="navbar-nav w-75 text-left">
+              <li class="nav-item px-3">
+                <a class="nav-link" href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z"/>
+                  </svg>
+                  Home
+                </a>
+              </li>
+                <li class="nav-item px-3">
+                  <a class="nav-link" href="/pigs">
+                    <img src="images/Pig Icon.png" alt="Icon" style="width: 24px; height: 24px;">
+                    Pigs
+                  </a>
+                </li>
+                <li class="nav-item px-3">
+                  <a class="nav-link" href="/devices">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-calculator-fill" viewBox="0 0 16 16">
+                      <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm2 .5v2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-7a.5.5 0 0 0-.5.5zm0 4v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM4.5 9a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 12.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zM7.5 6a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM7 9.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM10 6.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5zm.5 2.5a.5.5 0 0 0-.5.5v4a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 0-.5-.5h-1z"/>
+                    </svg>
+                    Devices
+                  </a>
+                </li>
+            </ul>
+            <div class="position-absolute bottom-0 p-3">
+              <img src="images/Pig and Farm Vector.jpg" class="img-fluid rounded-4 " alt="">
+            <button type="button" class="btn btn-success w-100 mt-4" data-bs-toggle="modal" data-bs-target="#addpig">Add Pig</button>
+              </div>
+          </div>
+          
+        </div>
+      <p class="h3 ms-3"><b>Pigs</b></p>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <div class="input-group">
+                
+           
+                <select class ="form-select" onchange="handleLogout(this)">
+                  <option value="" selected><%= fullName %></option>
+                  <option value="/logout?_method=DELETE">Log Out</option>
+                </select>
+                <script>
+                  function handleLogout(selectElement) {
+                    var optionValue = selectElement.value;
+                    
+                    if (optionValue) {
+                      var form = document.createElement('form');
+                      form.action = optionValue;
+                      form.method = 'POST';
+                  
+                      var button = document.createElement('button');
+                      button.type = 'submit';
+                      button.innerText = 'Log Out';
+                  
+                      form.appendChild(button);
+                      document.body.appendChild(form);
+                  
+                      form.submit();
+                    }
+                  }
+                  </script>
+              </div>
+             
+      </div>
+    </div>
+    </nav>
+    
+<section id="dataContainer" class="px-4 my-container"></section>
+
+     <div class="modal" id="addpig">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header text-center bg-success">
+                  <h5 class="modal-title w-100 text-white">Add a Pig</h5>
+              </div>
+              <div class="modal-body">
+                  <form id = "addPigForm" action="/submit" method="POST">
+                      <div class="mb-3">
+                        <label for="name">Label:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="device">Device Code:</label>
+    <select id="device" class="form-control"name="device" required>
+      <% devices.forEach(function(device) { %>
+        <option value="<%= device.device_code %>"><%= device.name %><%= device.device_code %></option>
+      <% }) %>
+    </select>
+                      </div>
+                       
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                          <button type="submit" class="btn btn-success" onclick="validateAndConfirm()" >Confirm</button>
+                      </div>
+                  </form>
+              </div>
+             
+          </div>
+      </div>
+  </div>
+  <script>
+     function validateAndConfirm() {
+    var input1 = document.getElementById('pig_name').value;
+    var input2 = document.getElementById('device_code').value;
+    
+    if (input1.trim() === '' || input2.trim() === '') {
+      alert('Please fill out all fields.');
+      return;
+    }
+    
+    var confirmed = confirm("Are you sure you want to confirm?");
+    if (confirmed) {
+      document.getElementById('addPigForm').submit();
+      alert("Pig added successfully");
+    }
+  }
+  </script>
+  <!-- Include the Socket.IO client library in your HTML file -->
+<script src="/socket.io/socket.io.js"></script>
+
+<script>
+  // Set up a Socket.IO connection
+  const socket = io();
+  // Handle the initial data when the client receives it
+  socket.on('initialData', (coughingData, nonCoughingData) => {
+    // Update the initial data in the DOM
+    updateDataContainer(coughingData, nonCoughingData);
+  });
+
+  // Handle the updated data when the client receives it
+  socket.on('updateCounts', (coughingData, nonCoughingData) => {
+    // Update the updated data in the DOM
+    updateDataContainer(coughingData, nonCoughingData);
+  });
+
+  // Function to update the content of the data container
+  function updateDataContainer(coughingData, nonCoughingData) {
+    const dataContainer = document.getElementById('dataContainer');
+    dataContainer.innerHTML = '';
+
+    // Append the coughingData section
+    const coughingSection = document.createElement('div');
+    coughingSection.innerHTML = `
+      <div class="row my-3">
+        <h3><b class="bg-warning"><u>Coughed Today</u></b></h3>
+      </div>
+      <div class="container-fluid p-4 rounded-4" style="background-color: #ffffff;">
+        ${generateCoughingData(coughingData)}
+      </div>
+    `;
+    dataContainer.appendChild(coughingSection);
+
+    // Append the nonCoughingData section
+    const nonCoughingSection = document.createElement('div');
+    nonCoughingSection.innerHTML = `
+      <div class="row my-3">
+        <h3><b class="bg-success text-white"><u>Did Not Cough Today</u></b></h3>
+      </div>
+      <div class="container-fluid p-4 rounded-4" style="background-color: #ffffff;">
+        ${generateNonCoughingData(nonCoughingData)}
+      </div>
+    `;
+    dataContainer.appendChild(nonCoughingSection);
+  }
+
+  // Function to generate the HTML for the coughingData section
+  function generateCoughingData(coughingData) {
+    if (coughingData.length > 0) {
+   
+      return `
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          ${coughingData
+            .map(
+              (pig) => `
+                <div class="col">
+                  <a href="/individualPig/${pig.pig_id}" class="btn btn-warning rounded-4">
+                    <div class="container">
+                      <div class="row justify-content-center align-items-center">
+                        <div class="col-md-6">
+                          <img src="/images/Pig.jpg" class="img-fluid rounded-4 my-3" alt="...">
+                        </div>
+                        <div class="col-md-6">
+                          <div class="card-body m-1" style="color:white">
+                            <p class="card-text card-text-left">Label: <b>${pig.pig_name}</b></p>
+                            <p class="card-text card-text-left">Device Code: <b>${pig.device_code}</b></p>
+                            <p class="card-text card-text-left">Last cough: <b>${pig.latest_cough}</b></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              `
+            )
+            .join('')}
+        </div>
+      `;
+    } else {
+      return '<p>No coughing data available for today.</p>';
+    }
+  }
+
+  // Function to generate the HTML for the nonCoughingData section
+  function generateNonCoughingData(nonCoughingData) {
+    if (nonCoughingData.length > 0)  {
+      return `
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          ${nonCoughingData
+            .map(
+              (pig) => `
+                <div class="col">
+                  <a href="/individualPig/${pig.pig_id}" class="btn btn-success rounded-4">
+                    <div class="container">
+                      <div class="row justify-content-center align-items-center">
+                        <div class="col-md-6">
+                          <img src="/images/Pig.jpg" class="img-fluid rounded-4 my-3" alt="...">
+                        </div>
+                        <div class="col-md-6">
+                          <div class="card-body m-1">
+                            <p class="card-text card-text-left">Label: <b>${pig.pig_name}</b></p>
+                            <p class="card-text card-text-left">Device Code: <b>${pig.device_code}</b></p>
+                            <p class="card-text card-text-left">Last cough: <b>${pig.last_event ? pig.last_event : 'No coughs detected'}</b></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              `
+            )
+            .join('')}
+        </div>
+      `;
+    } else {
+      return '<p>No non-coughing data available for today.</p>';
+    }
+  }
+
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
